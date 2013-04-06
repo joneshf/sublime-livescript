@@ -18,7 +18,7 @@ class LiveScript(sublime_plugin.TextCommand):
         self._write_to_window(window, js, error)
 
     def _args(self):
-        return self.LIVESCRIPT
+        return self.LIVESCRIPT, '--stdin', '--compile'
 
     def _compile(self, text):
         path = self._path()
