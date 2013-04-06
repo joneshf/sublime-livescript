@@ -1,0 +1,7 @@
+[
+    {
+        "caption": "LiveScript: Compile Current File",
+        "command": "live_script",
+        "args": {}
+    }
+]

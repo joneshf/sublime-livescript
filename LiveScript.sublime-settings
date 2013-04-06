@@ -1,0 +1,8 @@
+{
+    // Path to node.  Defaults to sublime's path
+    "node_path": "",
+    // Path to livescript.  Defaults to sublime's path
+    "livescript_path": "",
+    // The actual binary.
+    "livescript_bin": ""
+}
