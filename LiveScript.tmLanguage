@@ -171,6 +171,12 @@
 					<key>name</key>
 					<string>constant.language.LiveScript</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>@[\w$]*</string>
+					<key>name</key>
+					<string>constant.language.LiveScript</string>
+				</dict>
 			</array>
 		</dict>
 		<key>numeric</key>

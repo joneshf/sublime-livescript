@@ -88,6 +88,10 @@
                 {
                     "name": "constant.language.LiveScript",
                     "match": "\\b(null|undefined|void)\\b"
+                },
+                {
+                    "name": "constant.language.LiveScript",
+                    "match": "@[\\w$]*"
                 }
             ]
         },
