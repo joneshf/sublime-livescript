@@ -15,6 +15,10 @@
 			<string>#numeric</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#keywords</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>Single line comment.</string>
 			<key>match</key>
@@ -148,6 +152,24 @@
 					<string>\#(\w*)\b</string>
 					<key>name</key>
 					<string>source.LiveScript.embedded.source</string>
+				</dict>
+			</array>
+		</dict>
+		<key>keywords</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(true|false|on|off|yes|no)\b</string>
+					<key>name</key>
+					<string>constant.language.boolean.LiveScript</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(null|undefined|void)\b</string>
+					<key>name</key>
+					<string>constant.language.LiveScript</string>
 				</dict>
 			</array>
 		</dict>

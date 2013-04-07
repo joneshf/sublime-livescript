@@ -7,6 +7,9 @@
             "include": "#numeric"
         },
         {
+            "include": "#keywords"
+        },
+        {
             "name": "comment.LiveScript",
             "match": "#.*$",
             "comment": "Single line comment."
@@ -73,6 +76,18 @@
                     "name": "source.LiveScript.embedded.source",
                     "match": "\\#(\\w*)\\b",
                     "comment": "Interpolated simple LiveScript variables within strings."
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.LiveScript",
+                    "match": "\\b(true|false|on|off|yes|no)\\b"
+                },
+                {
+                    "name": "constant.language.LiveScript",
+                    "match": "\\b(null|undefined|void)\\b"
                 }
             ]
         },
