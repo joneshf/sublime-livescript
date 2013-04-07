@@ -4,6 +4,9 @@
     "fileTypes": ["ls"],
     "patterns": [
         {
+            "include": "#numeric"
+        },
+        {
             "name": "comment.LiveScript",
             "match": "#.*$",
             "comment": "Single line comment."
@@ -26,8 +29,7 @@
             },
             "patterns": [
                 {
-                    "include": "#interpolateComplex",
-                    "include": "#interpolateSimple"
+                    "include": "#interpolated"
                 }
             ],
             "comment": "Double quoted string."
@@ -56,29 +58,31 @@
         }
     ],
     "repository": {
-        "interpolateComplex": {
-            "name": "source.LiveScript.embedded.source",
-            "begin": "\\#\\{",
-            "end": "\\}",
-            "captures": {
-                "0": { "name": "punctuation.section.embedded.LiveScript"}
-            },
+        "interpolated": {
             "patterns": [
-                { "include": "$self" }
-            ],
-            "comment": "Interpolated complex LiveScript expressions within strings."
+                {
+                    "name": "source.LiveScript.embedded.source",
+                    "begin": "\\#\\{",
+                    "end": "\\}",
+                    "patterns": [
+                        { "include": "$self" }
+                    ],
+                    "comment": "Interpolated complex LiveScript expressions within strings."
+                },
+                {
+                    "name": "source.LiveScript.embedded.source",
+                    "match": "\\#(\\w*)\\b",
+                    "comment": "Interpolated simple LiveScript variables within strings."
+                }
+            ]
         },
-        "interpolateSimple": {
-            "name": "source.LiveScript.embedded.source",
-            "begin": "\\#",
-            "end": "\\s",
-            "captures": {
-                "0": { "name": "punctuation.section.embedded.LiveScript"}
-            },
+        "numeric": {
             "patterns": [
-                { "include": "$self" }
-            ],
-            "comment": "Interpolated simple LiveScript variables within strings."
+                {
+                    "name": "constant.numeric.LiveScript",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
         }
     },
     "uuid": "3dd79e1c-6cf0-4302-947b-ef00aa5e2a8d"

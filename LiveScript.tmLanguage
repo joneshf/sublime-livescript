@@ -11,6 +11,10 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>include</key>
+			<string>#numeric</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>Single line comment.</string>
 			<key>match</key>
@@ -57,7 +61,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#interpolateSimple</string>
+					<string>#interpolated</string>
 				</dict>
 			</array>
 		</dict>
@@ -116,55 +120,46 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>interpolateComplex</key>
+		<key>interpolated</key>
 		<dict>
-			<key>begin</key>
-			<string>\#\{</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.section.embedded.LiveScript</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Interpolated complex LiveScript expressions within strings.</string>
-			<key>end</key>
-			<string>\}</string>
-			<key>name</key>
-			<string>source.LiveScript.embedded.source</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>$self</string>
+					<key>begin</key>
+					<string>\#\{</string>
+					<key>comment</key>
+					<string>Interpolated complex LiveScript expressions within strings.</string>
+					<key>end</key>
+					<string>\}</string>
+					<key>name</key>
+					<string>source.LiveScript.embedded.source</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Interpolated simple LiveScript variables within strings.</string>
+					<key>match</key>
+					<string>\#(\w*)\b</string>
+					<key>name</key>
+					<string>source.LiveScript.embedded.source</string>
 				</dict>
 			</array>
 		</dict>
-		<key>interpolateSimple</key>
+		<key>numeric</key>
 		<dict>
-			<key>begin</key>
-			<string>\#</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.section.embedded.LiveScript</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Interpolated simple LiveScript variables within strings.</string>
-			<key>end</key>
-			<string>\s</string>
-			<key>name</key>
-			<string>source.LiveScript.embedded.source</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>$self</string>
+					<key>match</key>
+					<string>\b\d+\b</string>
+					<key>name</key>
+					<string>constant.numeric.LiveScript</string>
 				</dict>
 			</array>
 		</dict>
