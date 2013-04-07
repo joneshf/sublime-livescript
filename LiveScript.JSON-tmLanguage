@@ -50,9 +50,9 @@
             "name": "string.LiveScript",
             "match": "(\\\\)(.*?)(\\s)",
             "captures": {
-                "0": { "name": "punctuation.definition.string.begin.LiveScript" },
-                "1": { "name": "definition.string.quoted.single.LiveScript" },
-                "2": { "name": "punctuation.definition.string.end.LiveScript" }
+                "1": { "name": "punctuation.definition.string.begin.LiveScript" },
+                "2": { "name": "definition.string.quoted.single.LiveScript" },
+                "3": { "name": "punctuation.definition.string.end.LiveScript" }
             },
             "comment": "String without whitespace."
         }
@@ -80,7 +80,11 @@
             "patterns": [
                 {
                     "name": "constant.numeric.LiveScript",
-                    "match": "\\b\\d+\\b"
+                    "match": "\\b(\\d{1,2}~[\\d\\w]+)|(\\d+[\\d_]*(\\.[\\d_]+)?(e[+-]?[\\d_]+)?(\\w*))\\b",
+                    "captures": {
+                        "5": { "name": "punctuation.definition.string.begin.LiveScript" }
+                    },
+                    "comment": "All numbers, different bases, decimals, underscores and trailing characters."
                 }
             ]
         }

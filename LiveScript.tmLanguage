@@ -94,17 +94,17 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.string.begin.LiveScript</string>
 				</dict>
-				<key>1</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>definition.string.quoted.single.LiveScript</string>
 				</dict>
-				<key>2</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.string.end.LiveScript</string>
@@ -156,8 +156,18 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>All numbers, different bases, decimals, underscores and trailing characters.</string>
 					<key>match</key>
-					<string>\b\d+\b</string>
+					<string>\b(\d{1,2}~[\d\w]+)|(\d+[\d_]*(\.[\d_]+)?(e[+-]?[\d_]+)?(\w*))\b</string>
 					<key>name</key>
 					<string>constant.numeric.LiveScript</string>
 				</dict>
