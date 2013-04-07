@@ -13,7 +13,73 @@
             "begin": "/\\*",
             "end": "\\*/",
             "comment": "Block comment."
+        },
+        {
+            "name": "string.LiveScript",
+            "begin": "\"",
+            "beginCaptures": {
+                "0": { "name": "punctuation.definition.string.begin.LiveScript" }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": { "name": "punctuation.definition.string.end.LiveScript" }
+            },
+            "patterns": [
+                {
+                    "include": "#interpolateComplex",
+                    "include": "#interpolateSimple"
+                }
+            ],
+            "comment": "Double quoted string."
+        },
+        {
+            "name": "string.LiveScript",
+            "begin": "'",
+            "beginCaptures": {
+                "0": { "name": "punctuation.definition.string.begin.LiveScript" }
+            },
+            "end": "'",
+            "endCaptures": {
+                "0": { "name": "punctuation.definition.string.end.LiveScript" }
+            },
+            "comment": "Single quoted string."
+        },
+        {
+            "name": "string.LiveScript",
+            "match": "(\\\\)(.*?)(\\s)",
+            "captures": {
+                "0": { "name": "punctuation.definition.string.begin.LiveScript" },
+                "1": { "name": "definition.string.quoted.single.LiveScript" },
+                "2": { "name": "punctuation.definition.string.end.LiveScript" }
+            },
+            "comment": "String without whitespace."
         }
     ],
+    "repository": {
+        "interpolateComplex": {
+            "name": "source.LiveScript.embedded.source",
+            "begin": "\\#\\{",
+            "end": "\\}",
+            "captures": {
+                "0": { "name": "punctuation.section.embedded.LiveScript"}
+            },
+            "patterns": [
+                { "include": "$self" }
+            ],
+            "comment": "Interpolated complex LiveScript expressions within strings."
+        },
+        "interpolateSimple": {
+            "name": "source.LiveScript.embedded.source",
+            "begin": "\\#",
+            "end": "\\s",
+            "captures": {
+                "0": { "name": "punctuation.section.embedded.LiveScript"}
+            },
+            "patterns": [
+                { "include": "$self" }
+            ],
+            "comment": "Interpolated simple LiveScript variables within strings."
+        }
+    },
     "uuid": "3dd79e1c-6cf0-4302-947b-ef00aa5e2a8d"
 }
