@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>ls</string>
+	</array>
+	<key>name</key>
+	<string>LiveScript</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Single line comment.</string>
+			<key>match</key>
+			<string>#.*$</string>
+			<key>name</key>
+			<string>comment.LiveScript</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>comment</key>
+			<string>Block comment.</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.LiveScript</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.LiveScript</string>
+	<key>uuid</key>
+	<string>3dd79e1c-6cf0-4302-947b-ef00aa5e2a8d</string>
+</dict>
+</plist>

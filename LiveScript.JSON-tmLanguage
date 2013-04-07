@@ -1,0 +1,19 @@
+{
+    "name": "LiveScript",
+    "scopeName": "source.LiveScript",
+    "fileTypes": ["ls"],
+    "patterns": [
+        {
+            "name": "comment.LiveScript",
+            "match": "#.*$",
+            "comment": "Single line comment."
+        },
+        {
+            "name": "comment.LiveScript",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "comment": "Block comment."
+        }
+    ],
+    "uuid": "3dd79e1c-6cf0-4302-947b-ef00aa5e2a8d"
+}
