@@ -121,6 +121,41 @@
 			<key>name</key>
 			<string>string.LiveScript</string>
 		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>string.regexp.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Single or multiline regexp.</string>
+			<key>end</key>
+			<string>/g?i?m?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>string.regexp.LiveScript</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>regex.LiveScript</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>([^*\\\[]|\\.|\[([^\]\\]|\\.)*\])([^\\\[]|\\.|\[([^\]\\]|\\.)*\])*?</string>
+					<key>name</key>
+					<string>string.LiveScript</string>
+				</dict>
+			</array>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>

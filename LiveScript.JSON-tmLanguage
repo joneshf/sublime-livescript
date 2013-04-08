@@ -58,6 +58,24 @@
                 "3": { "name": "punctuation.definition.string.end.LiveScript" }
             },
             "comment": "String without whitespace."
+        },
+        {
+            "name": "regex.LiveScript",
+            "begin": "/",
+            "beginCaptures": {
+                "0": { "name": "string.regexp.LiveScript" }
+            },
+            "end": "/g?i?m?",
+            "endCaptures": {
+                "0": { "name": "string.regexp.LiveScript" }
+            },
+            "patterns": [
+                {
+                    "name": "string.LiveScript",
+                    "match": "([^*\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])([^\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])*?"
+                }
+            ],
+            "comment": "Single or multiline regexp."
         }
     ],
     "repository": {
