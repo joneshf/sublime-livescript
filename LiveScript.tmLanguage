@@ -122,35 +122,33 @@
 			<string>string.LiveScript</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>/</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>string.regexp.LiveScript</string>
-				</dict>
-			</dict>
 			<key>comment</key>
-			<string>Single or multiline regexp.</string>
-			<key>end</key>
-			<string>/g?i?m?</string>
-			<key>endCaptures</key>
+			<string>Single line regexp.</string>
+			<key>match</key>
+			<string>/([^*\\\[]|\\.|\[([^\]\\]|\\.)*\])([^\\\[]|\\.|\[([^\]\\]|\\.)*\])*?/g?i?m?</string>
+			<key>name</key>
+			<string>string.LiveScript</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/{2}</string>
+			<key>captures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>string.regexp.LiveScript</string>
+					<string>string.LiveScript</string>
 				</dict>
 			</dict>
+			<key>end</key>
+			<string>/{2}</string>
 			<key>name</key>
-			<string>regex.LiveScript</string>
+			<string>multiline.regex.LiveScript</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>([^*\\\[]|\\.|\[([^\]\\]|\\.)*\])([^\\\[]|\\.|\[([^\]\\]|\\.)*\])*?</string>
+					<string>.</string>
 					<key>name</key>
 					<string>string.LiveScript</string>
 				</dict>
@@ -179,7 +177,7 @@
 			<key>comment</key>
 			<string>Keywords.</string>
 			<key>match</key>
-			<string>\b(by|to|til)\b</string>
+			<string>\b\b</string>
 			<key>name</key>
 			<string>keyword.LiveScript</string>
 		</dict>
@@ -198,6 +196,38 @@
 			<string>^\s*:(\w+)</string>
 			<key>name</key>
 			<string>label.LiveScript</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Range keywords.</string>
+			<key>match</key>
+			<string>\b(by|to|til)\b</string>
+			<key>name</key>
+			<string>range.LiveScript</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Numeric operators.</string>
+			<key>match</key>
+			<string>(\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~(?!~?&gt;))</string>
+			<key>name</key>
+			<string>operators.LiveScript</string>
 		</dict>
 	</array>
 	<key>repository</key>

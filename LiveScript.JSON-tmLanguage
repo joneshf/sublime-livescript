@@ -60,22 +60,23 @@
             "comment": "String without whitespace."
         },
         {
-            "name": "regex.LiveScript",
-            "begin": "/",
-            "beginCaptures": {
-                "0": { "name": "string.regexp.LiveScript" }
-            },
-            "end": "/g?i?m?",
-            "endCaptures": {
-                "0": { "name": "string.regexp.LiveScript" }
+            "name": "string.LiveScript",
+            "match": "/([^*\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])([^\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])*?/g?i?m?",
+            "comment": "Single line regexp."
+        },
+        {
+            "name": "multiline.regex.LiveScript",
+            "begin": "/{2}",
+            "end": "/{2}",
+            "captures": {
+                "0": { "name": "string.LiveScript" }
             },
             "patterns": [
                 {
                     "name": "string.LiveScript",
-                    "match": "([^*\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])([^\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])*?"
+                    "match": "."
                 }
-            ],
-            "comment": "Single or multiline regexp."
+            ]
         },
         {
             "name": "declaration.tag.LiveScript",
@@ -91,7 +92,7 @@
         },
         {
             "name": "keyword.LiveScript",
-            "match": "\\b(by|to|til)\\b",
+            "match": "\\b\\b",
             "comment": "Keywords."
         },
         {
@@ -101,6 +102,22 @@
                 "1": { "name": "keyword.LiveScript" }
             },
             "comment": "Label."
+        },
+        {
+            "name": "range.LiveScript",
+            "match": "\\b(by|to|til)\\b",
+            "captures": {
+                "1": { "name": "keyword.LiveScript" }
+            },
+            "comment": "Range keywords."
+        },
+        {
+            "name": "operators.LiveScript",
+            "match": "(\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~(?!~?>))",
+            "captures": {
+                "1": { "name": "keyword.LiveScript" }
+            },
+            "comment": "Numeric operators."
         }
     ],
     "repository": {
