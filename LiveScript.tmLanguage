@@ -183,6 +183,22 @@
 			<key>name</key>
 			<string>keyword.LiveScript</string>
 		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Label.</string>
+			<key>match</key>
+			<string>^\s*:(\w+)</string>
+			<key>name</key>
+			<string>label.LiveScript</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>

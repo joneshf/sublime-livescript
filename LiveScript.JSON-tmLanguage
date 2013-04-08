@@ -93,6 +93,14 @@
             "name": "keyword.LiveScript",
             "match": "\\b(by|to|til)\\b",
             "comment": "Keywords."
+        },
+        {
+            "name": "label.LiveScript",
+            "match": "^\\s*:(\\w+)",
+            "captures": {
+                "1": { "name": "keyword.LiveScript" }
+            },
+            "comment": "Label."
         }
     ],
     "repository": {
