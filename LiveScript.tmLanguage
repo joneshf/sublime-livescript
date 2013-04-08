@@ -219,15 +219,31 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.LiveScript</string>
+					<string>keyword.operators.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Relational operators.</string>
+			<key>match</key>
+			<string>(={2}|\bis(nt| not)?\b|!=|!?~=|[&gt;|&lt;]{1}[=|\?]?)</string>
+			<key>name</key>
+			<string>rational.operators.LiveScript</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operators.LiveScript</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>Numeric operators.</string>
 			<key>match</key>
-			<string>(\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~(?!~?&gt;))</string>
+			<string>(\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~)</string>
 			<key>name</key>
-			<string>operators.LiveScript</string>
+			<string>numeric.operators.LiveScript</string>
 		</dict>
 	</array>
 	<key>repository</key>

@@ -112,10 +112,18 @@
             "comment": "Range keywords."
         },
         {
-            "name": "operators.LiveScript",
-            "match": "(\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~(?!~?>))",
+            "name": "rational.operators.LiveScript",
+            "match": "(={2}|\\bis(nt| not)?\\b|!=|!?~=|[>|<]{1}[=|\\?]?)",
             "captures": {
-                "1": { "name": "keyword.LiveScript" }
+                "1": { "name": "keyword.operators.LiveScript" }
+            },
+            "comment": "Relational operators."
+        },
+        {
+            "name": "numeric.operators.LiveScript",
+            "match": "(\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~)",
+            "captures": {
+                "1": { "name": "keyword.operators.LiveScript" }
             },
             "comment": "Numeric operators."
         }
