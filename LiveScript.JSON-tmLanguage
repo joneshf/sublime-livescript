@@ -76,13 +76,30 @@
                 }
             ],
             "comment": "Single or multiline regexp."
+        },
+        {
+            "name": "declaration.tag.LiveScript",
+            "begin": "<\\[",
+            "end": "\\]>",
+            "patterns": [
+                {
+                    "name": "string.LiveScript",
+                    "match": "."
+                }
+            ],
+            "comment": "Lists of words."
+        },
+        {
+            "name": "keyword.LiveScript",
+            "match": "\\b(by|to|til)\\b",
+            "comment": "Keywords."
         }
     ],
     "repository": {
         "interpolated": {
             "patterns": [
                 {
-                    "name": "source.LiveScript.embedded.source",
+                    "name": "constant.character.escape",
                     "begin": "\\#\\{",
                     "end": "\\}",
                     "patterns": [
@@ -91,8 +108,11 @@
                     "comment": "Interpolated complex LiveScript expressions within strings."
                 },
                 {
-                    "name": "source.LiveScript.embedded.source",
+                    "name": "constant.character.escape",
                     "match": "\\#(\\w*)\\b",
+                    "captures": {
+                        "1": { "name": "constant.character.escaped" }
+                    },
                     "comment": "Interpolated simple LiveScript variables within strings."
                 }
             ]
@@ -119,7 +139,7 @@
                     "name": "constant.numeric.LiveScript",
                     "match": "\\b(\\d{1,2}~[\\d\\w]+)|(\\d+[\\d_]*(\\.[\\d_]+)?(e[+-]?[\\d_]+)?(\\w*))\\b",
                     "captures": {
-                        "5": { "name": "punctuation.definition.string.begin.LiveScript" }
+                        "5": { "name": "punctuation.definition.string.end.LiveScript" }
                     },
                     "comment": "All numbers, different bases, decimals, underscores and trailing characters."
                 }
