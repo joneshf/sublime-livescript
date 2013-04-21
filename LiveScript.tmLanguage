@@ -11,14 +11,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>include</key>
-			<string>#numeric</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#keywords</string>
-		</dict>
-		<dict>
 			<key>comment</key>
 			<string>Single line comment.</string>
 			<key>match</key>
@@ -174,76 +166,74 @@
 			</array>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Keywords.</string>
-			<key>match</key>
-			<string>\b\b</string>
-			<key>name</key>
-			<string>keyword.LiveScript</string>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.LiveScript</string>
+					<string>variable.parameter.function.LiveScript</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.LiveScript</string>
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>Label.</string>
+			<string>Normal functions.</string>
 			<key>match</key>
-			<string>^\s*:(\w+)</string>
+			<string>(\(.*?\))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
 			<key>name</key>
-			<string>label.LiveScript</string>
+			<string>function.LiveScript</string>
 		</dict>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.LiveScript</string>
+					<string>storage.type.function.LiveScript</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.LiveScript</string>
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>Range keywords.</string>
+			<string>Named functons.</string>
 			<key>match</key>
-			<string>\b(by|to|til)\b</string>
+			<string>((function)\s*(.*?)\s(.*))</string>
 			<key>name</key>
-			<string>range.LiveScript</string>
+			<string>named.function.LiveScript</string>
 		</dict>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operators.LiveScript</string>
+					<string>entity.name.function.LiveScript</string>
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>Relational operators.</string>
+			<string>Infix functions.</string>
 			<key>match</key>
-			<string>(={2}|\bis(nt| not)?\b|!=|!?~=|[&gt;|&lt;]{1}[=|\?]?)</string>
+			<string>`.*?`</string>
 			<key>name</key>
-			<string>rational.operators.LiveScript</string>
+			<string>infix.function.LiveScript</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operators.LiveScript</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Numeric operators.</string>
-			<key>match</key>
-			<string>(\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~)</string>
-			<key>name</key>
-			<string>numeric.operators.LiveScript</string>
+			<key>include</key>
+			<string>#numeric</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#keywords</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operators</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -292,6 +282,46 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>comment</key>
+					<string>Keywords.</string>
+					<key>match</key>
+					<string>\b(delete|do|import( all)?|in|instanceof|new|of|require|typeof(!)?|window|with)\b</string>
+					<key>name</key>
+					<string>keyword.LiveScript</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Label.</string>
+					<key>match</key>
+					<string>^\s*:(\w+)</string>
+					<key>name</key>
+					<string>label.LiveScript</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Range keywords.</string>
+					<key>match</key>
+					<string>\b(by|til|to)\b</string>
+					<key>name</key>
+					<string>range.LiveScript</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>\b(true|false|on|off|yes|no)\b</string>
 					<key>name</key>
@@ -305,7 +335,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>@[\w$]*</string>
+					<string>@[\w$\-_]*</string>
 					<key>name</key>
 					<string>constant.language.LiveScript</string>
 				</dict>
@@ -318,7 +348,7 @@
 				<dict>
 					<key>captures</key>
 					<dict>
-						<key>5</key>
+						<key>6</key>
 						<dict>
 							<key>name</key>
 							<string>punctuation.definition.string.end.LiveScript</string>
@@ -327,9 +357,79 @@
 					<key>comment</key>
 					<string>All numbers, different bases, decimals, underscores and trailing characters.</string>
 					<key>match</key>
-					<string>\b(\d{1,2}~[\d\w]+)|(\d+[\d_]*(\.[\d_]+)?(e[+-]?[\d_]+)?(\w*))\b</string>
+					<string>(?&lt;!\w)(\b(\d{1,2}~[\d\w]+)|(\d+[\d_]*(\.[\d_]+)?(e[+-]?[\d_]+)?(\w*))\b)</string>
 					<key>name</key>
 					<string>constant.numeric.LiveScript</string>
+				</dict>
+			</array>
+		</dict>
+		<key>operators</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operators.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Relational operators.</string>
+					<key>match</key>
+					<string>(=|\bis(nt| not)?\b|!=|!?~=|[&gt;|&lt;]{1}[=|\?]?)</string>
+					<key>name</key>
+					<string>rational.operators.LiveScript</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operators.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Numeric operators.</string>
+					<key>match</key>
+					<string>(\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~)</string>
+					<key>name</key>
+					<string>numeric.operators.LiveScript</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operators.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Boolean operators.</string>
+					<key>match</key>
+					<string>\b(and|&amp;{2}|or|\|{2}|not|!|xor)\b</string>
+					<key>name</key>
+					<string>boolean.operators.LiveScript</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operators.LiveScript</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Existence operators.</string>
+					<key>match</key>
+					<string>(\?|!\?)</string>
+					<key>name</key>
+					<string>existence.operators.LiveScript</string>
 				</dict>
 			</array>
 		</dict>

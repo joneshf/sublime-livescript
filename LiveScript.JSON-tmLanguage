@@ -4,12 +4,6 @@
     "fileTypes": ["ls"],
     "patterns": [
         {
-            "include": "#numeric"
-        },
-        {
-            "include": "#keywords"
-        },
-        {
             "name": "comment.LiveScript",
             "match": "#.*$",
             "comment": "Single line comment."
@@ -91,41 +85,39 @@
             "comment": "Lists of words."
         },
         {
-            "name": "keyword.LiveScript",
-            "match": "\\b\\b",
-            "comment": "Keywords."
+            "name": "function.LiveScript",
+            "match": "(\\(.*?\\))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "captures": {
+                "1": { "name": "variable.parameter.function.LiveScript"},
+                "2": { "name": "storage.type.function.LiveScript" }
+            },
+            "comment": "Normal functions."
         },
         {
-            "name": "label.LiveScript",
-            "match": "^\\s*:(\\w+)",
+            "name": "named.function.LiveScript",
+            "match": "((function)\\s*(.*?)\\s(.*))",
             "captures": {
-                "1": { "name": "keyword.LiveScript" }
+                "2": { "name": "storage.type.function.LiveScript" },
+                "3": { "name": "entity.name.function.LiveScript"}
             },
-            "comment": "Label."
+            "comment": "Named functons."
         },
         {
-            "name": "range.LiveScript",
-            "match": "\\b(by|to|til)\\b",
+            "name": "infix.function.LiveScript",
+            "match": "`.*?`",
             "captures": {
-                "1": { "name": "keyword.LiveScript" }
+                "0": { "name": "entity.name.function.LiveScript" }
             },
-            "comment": "Range keywords."
+            "comment": "Infix functions."
         },
         {
-            "name": "rational.operators.LiveScript",
-            "match": "(={2}|\\bis(nt| not)?\\b|!=|!?~=|[>|<]{1}[=|\\?]?)",
-            "captures": {
-                "1": { "name": "keyword.operators.LiveScript" }
-            },
-            "comment": "Relational operators."
+            "include": "#numeric"
         },
         {
-            "name": "numeric.operators.LiveScript",
-            "match": "(\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~)",
-            "captures": {
-                "1": { "name": "keyword.operators.LiveScript" }
-            },
-            "comment": "Numeric operators."
+            "include": "#keywords"
+        },
+        {
+            "include": "#operators"
         }
     ],
     "repository": {
@@ -153,6 +145,27 @@
         "keywords": {
             "patterns": [
                 {
+                    "name": "keyword.LiveScript",
+                    "match": "\\b(delete|do|import( all)?|in|instanceof|new|of|require|typeof(!)?|window|with)\\b",
+                    "comment": "Keywords."
+                },
+                {
+                    "name": "label.LiveScript",
+                    "match": "^\\s*:(\\w+)",
+                    "captures": {
+                        "1": { "name": "keyword.LiveScript" }
+                    },
+                    "comment": "Label."
+                },
+                {
+                    "name": "range.LiveScript",
+                    "match": "\\b(by|til|to)\\b",
+                    "captures": {
+                        "1": { "name": "keyword.LiveScript" }
+                    },
+                    "comment": "Range keywords."
+                },
+                {
                     "name": "constant.language.boolean.LiveScript",
                     "match": "\\b(true|false|on|off|yes|no)\\b"
                 },
@@ -162,7 +175,7 @@
                 },
                 {
                     "name": "constant.language.LiveScript",
-                    "match": "@[\\w$]*"
+                    "match": "@[\\w$\\-_]*"
                 }
             ]
         },
@@ -170,11 +183,47 @@
             "patterns": [
                 {
                     "name": "constant.numeric.LiveScript",
-                    "match": "\\b(\\d{1,2}~[\\d\\w]+)|(\\d+[\\d_]*(\\.[\\d_]+)?(e[+-]?[\\d_]+)?(\\w*))\\b",
+                    "match": "(?<!\\w)(\\b(\\d{1,2}~[\\d\\w]+)|(\\d+[\\d_]*(\\.[\\d_]+)?(e[+-]?[\\d_]+)?(\\w*))\\b)",
                     "captures": {
-                        "5": { "name": "punctuation.definition.string.end.LiveScript" }
+                        "6": { "name": "punctuation.definition.string.end.LiveScript" }
                     },
                     "comment": "All numbers, different bases, decimals, underscores and trailing characters."
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "rational.operators.LiveScript",
+                    "match": "(=|\\bis(nt| not)?\\b|!=|!?~=|[>|<]{1}[=|\\?]?)",
+                    "captures": {
+                        "1": { "name": "keyword.operators.LiveScript" }
+                    },
+                    "comment": "Relational operators."
+                },
+                {
+                    "name": "numeric.operators.LiveScript",
+                    "match": "(\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~)",
+                    "captures": {
+                        "1": { "name": "keyword.operators.LiveScript" }
+                    },
+                    "comment": "Numeric operators."
+                },
+                {
+                    "name": "boolean.operators.LiveScript",
+                    "match": "\\b(and|&{2}|or|\\|{2}|not|!|xor)\\b",
+                    "captures": {
+                        "1": { "name": "keyword.operators.LiveScript" }
+                    },
+                    "comment": "Boolean operators."
+                },
+                {
+                    "name": "existence.operators.LiveScript",
+                    "match": "(\\?|!\\?)",
+                    "captures": {
+                        "1": { "name": "keyword.operators.LiveScript" }
+                    },
+                    "comment": "Existence operators."
                 }
             ]
         }
