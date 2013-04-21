@@ -147,6 +147,19 @@
             "comment": "Switch statement"
         },
         {
+            "name": "class.LiveScript",
+            "match": "(\\bclass\\b)\\s+(.*?)\\s+((extends)\\s+(.*?)\\s+)?((implements)\\s+(.*?)\\s+)?",
+            "captures": {
+                "1": { "name": "storage.type.class.LiveScript" },
+                "2": { "name": "entity.name.type.class.LiveScript" },
+                "4": { "name": "keyword.control.inheritance.LiveScript" },
+                "5": { "name": "entity.other.inherited-class.LiveScript" },
+                "7": { "name": "keyword.control.inheritance.LiveScript" },
+                "8": { "name": "entity.other.inherited-class.LiveScript" }
+            },
+            "comment": "Classes with optional `extends` and `implments`"
+        },
+        {
             "include": "#numeric"
         },
         {
@@ -215,7 +228,7 @@
                 },
                 {
                     "name": "keyword.control.LiveScript",
-                    "match": "\\b(break|case|default|do|else|ever|for|if|in|loop|of|otherwise|switch|that|then|unless|until|when|where|while|with)\\b"
+                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|of|otherwise|switch|that|then|try|unless|until|when|where|while|with)\\b"
                 }
             ]
         },
@@ -251,9 +264,9 @@
                 },
                 {
                     "name": "boolean.operators.LiveScript",
-                    "match": "\\b(and|&{2}|or|\\|{2}|not|!|xor)\\b",
+                    "match": "(\\b(and|or|not|xor)\\b)|(\\B(\\||\\&|\\!)\\B)",
                     "captures": {
-                        "1": { "name": "keyword.operators.LiveScript" }
+                        "0": { "name": "keyword.operators.LiveScript" }
                     },
                     "comment": "Boolean operators."
                 },

@@ -297,6 +297,47 @@
 			</array>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.class.LiveScript</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.class.LiveScript</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.inheritance.LiveScript</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.inherited-class.LiveScript</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.inheritance.LiveScript</string>
+				</dict>
+				<key>8</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.inherited-class.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Classes with optional `extends` and `implments`</string>
+			<key>match</key>
+			<string>(\bclass\b)\s+(.*?)\s+((extends)\s+(.*?)\s+)?((implements)\s+(.*?)\s+)?</string>
+			<key>name</key>
+			<string>class.LiveScript</string>
+		</dict>
+		<dict>
 			<key>include</key>
 			<string>#numeric</string>
 		</dict>
@@ -414,7 +455,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(break|case|default|do|else|ever|for|if|in|loop|of|otherwise|switch|that|then|unless|until|when|where|while|with)\b</string>
+					<string>\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|of|otherwise|switch|that|then|try|unless|until|when|where|while|with)\b</string>
 					<key>name</key>
 					<string>keyword.control.LiveScript</string>
 				</dict>
@@ -481,7 +522,7 @@
 				<dict>
 					<key>captures</key>
 					<dict>
-						<key>1</key>
+						<key>0</key>
 						<dict>
 							<key>name</key>
 							<string>keyword.operators.LiveScript</string>
@@ -490,7 +531,7 @@
 					<key>comment</key>
 					<string>Boolean operators.</string>
 					<key>match</key>
-					<string>\b(and|&amp;{2}|or|\|{2}|not|!|xor)\b</string>
+					<string>(\b(and|or|not|xor)\b)|(\B(\||\&amp;|\!)\B)</string>
 					<key>name</key>
 					<string>boolean.operators.LiveScript</string>
 				</dict>
