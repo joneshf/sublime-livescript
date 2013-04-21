@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+for ${1:key}${2:, ${3:val}} of ${4:object}
+  ${0:...}
+]]></content>
+    <tabTrigger>for object</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
