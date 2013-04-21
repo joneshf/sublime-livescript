@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+else if ${1:condition}
+  ...
+]]></content>
+    <tabTrigger>elif</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>

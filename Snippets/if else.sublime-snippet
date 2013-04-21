@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+if ${1:condition}
+  ${2:...}
+else
+  ${3:...}
+]]></content>
+    <tabTrigger>if else</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
