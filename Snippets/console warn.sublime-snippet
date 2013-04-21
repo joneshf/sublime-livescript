@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+console.warn ${1:...}
+]]></content>
+    <tabTrigger>warn</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
