@@ -524,7 +524,7 @@
 					<key>comment</key>
 					<string>Assignment operators.</string>
 					<key>match</key>
-					<string>=(?!=)|:=|\+=|-=|\*=|/=|%=|%%=|&lt;\?=|&gt;\?=|\*\*=|\^=|\?=|\|\|=|&amp;&amp;=|&amp;&amp;\+=|\?\*=|\+\+=</string>
+					<string>(\?{1}|\|{2}|&amp;{2})?(=(?!=)|:=|\+{1,2}=|-{1,2}=|\*{1,2}=|/=|%{1,2}=|&lt;\?=|&gt;\?=|\^=)</string>
 					<key>name</key>
 					<string>assignment.operators.LiveScript</string>
 				</dict>
