@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+switch ${1:control}
+  | ${2:...} => ${3:...}
+  | _ => ${0:...}
+]]></content>
+    <tabTrigger>switch short</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
