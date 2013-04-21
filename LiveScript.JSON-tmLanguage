@@ -4,12 +4,12 @@
     "fileTypes": ["ls"],
     "patterns": [
         {
-            "name": "comment.LiveScript",
+            "name": "comment.line.number-sign.LiveScript",
             "match": "#.*$",
             "comment": "Single line comment."
         },
         {
-            "name": "comment.LiveScript",
+            "name": "comment.block.LiveScript",
             "begin": "/\\*",
             "end": "\\*/",
             "comment": "Block comment."
@@ -54,7 +54,7 @@
             "comment": "String without whitespace."
         },
         {
-            "name": "string.LiveScript",
+            "name": "string.regexp.LiveScript",
             "match": "/([^*\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])([^\\\\\\[]|\\\\.|\\[([^\\]\\\\]|\\\\.)*\\])*?/g?i?m?",
             "comment": "Single line regexp."
         },
@@ -63,7 +63,7 @@
             "begin": "/{2}",
             "end": "/{2}",
             "captures": {
-                "0": { "name": "string.LiveScript" }
+                "0": { "name": "string.regexp.LiveScript" }
             },
             "patterns": [
                 {
@@ -167,6 +167,27 @@
             "comment": "Classes with optional `extends` and `implments`"
         },
         {
+            "name": "function.math.LiveScript",
+            "match": "\\bMath\\.(abs|acos|asin|atan|atan2|ceil|cos|exp|floor|imul|log|max|min|pow|random|round|sin|sqrt|tan|toSource)\\b",
+            "captures": {
+                "1": { "name": "support.function.math.LiveScript"}
+            }
+        },
+        {
+            "name": "constants.math.LiveScript",
+            "match": "\\bMath\\.(E|LN2|LN10|LOG2E|LOG10E|PI|SQRT1_2|SQRT2)\\b",
+            "captures": {
+                "1": { "name": "support.constant.math.LiveScript"}
+            }
+        },
+        {
+            "name": "console.LiveScript",
+            "match": "\\bconsole\\.(debug|log|dir|error|group|groupCollapsed|groupEnd|info|log|time|timeEnd|trace|warn)\\b",
+            "captures": {
+                "1": { "name": "support.function.console.LiveScript"}
+            }
+        },
+        {
             "include": "#numeric"
         },
         {
@@ -202,7 +223,7 @@
             "patterns": [
                 {
                     "name": "keyword.LiveScript",
-                    "match": "\\b(arguments|const|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|var|window)\\b",
+                    "match": "\\b(arguments|const|delete|import( all)?|instanceof|let|new|require|typeof(!)?|var|window)\\b",
                     "comment": "Keywords."
                 },
                 {
@@ -235,7 +256,11 @@
                 },
                 {
                     "name": "keyword.control.LiveScript",
-                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|of|otherwise|switch|that|then|try|unless|until|when|where|while|with)\\b"
+                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|of|switch|then|try|unless|until|when|where|while|with)\\b"
+                },
+                {
+                    "name": "variable.language.LiveScript",
+                    "match": "\\bit|fallthrough|otherwise|super|that|this\\b"
                 }
             ]
         },
@@ -248,6 +273,11 @@
                         "6": { "name": "punctuation.definition.string.end.LiveScript" }
                     },
                     "comment": "All numbers, different bases, decimals, underscores and trailing characters."
+                },
+                {
+                    "name": "support.constant.LiveScript",
+                    "match": "Infinity|NaN",
+                    "comment": "Magic numbers."
                 }
             ]
         },
