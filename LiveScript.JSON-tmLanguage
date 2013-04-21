@@ -133,11 +133,11 @@
         },
         {
             "name": "switch.statement.LiveScript",
-            "begin": "\\|",
+            "begin": "[\\w|\\s]\\|(?!\\|)[\\w|\\s]",
             "beginCaptures": {
                 "0": { "name": "keyword.control.LiveScript" }
             },
-            "end": "=>",
+            "end": "\\B=>\\B",
             "endCaptures": {
                 "0": { "name": "keyword.control.LiveScript" }
             },
@@ -182,7 +182,7 @@
             "patterns": [
                 {
                     "name": "keyword.LiveScript",
-                    "match": "\\b(arguments|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|window)\\b",
+                    "match": "\\b(arguments|const|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|var|window)\\b",
                     "comment": "Keywords."
                 },
                 {

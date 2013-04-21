@@ -265,7 +265,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\|</string>
+			<string>[\w|\s]\|(?!\|)[\w|\s]</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -277,7 +277,7 @@
 			<key>comment</key>
 			<string>Switch statement</string>
 			<key>end</key>
-			<string>=&gt;</string>
+			<string>\B=&gt;\B</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -358,7 +358,7 @@
 					<key>comment</key>
 					<string>Keywords.</string>
 					<key>match</key>
-					<string>\b(arguments|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|window)\b</string>
+					<string>\b(arguments|const|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|var|window)\b</string>
 					<key>name</key>
 					<string>keyword.LiveScript</string>
 				</dict>
