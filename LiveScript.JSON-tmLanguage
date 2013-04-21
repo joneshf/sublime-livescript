@@ -86,7 +86,7 @@
         },
         {
             "name": "function.LiveScript",
-            "match": "(\\(.*?\\))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "match": "(\\(.*?\\))?\\s*(\\!?([-]{1,2}|[~]{1,2})>)",
             "captures": {
                 "1": { "name": "variable.parameter.function.LiveScript"},
                 "2": { "name": "storage.type.function.LiveScript" }
@@ -95,7 +95,7 @@
         },
         {
             "name": "named.function.LiveScript",
-            "match": "((function)\\s*(.*?)\\s(.*))",
+            "match": "(\\!?(function)\\s*(.*?)\\s(.*))",
             "captures": {
                 "2": { "name": "storage.type.function.LiveScript" },
                 "3": { "name": "entity.name.function.LiveScript"}
@@ -109,6 +109,27 @@
                 "0": { "name": "entity.name.function.LiveScript" }
             },
             "comment": "Infix functions."
+        },
+        {
+            "name": "backcall.LiveScript",
+            "match": "(<(-{1,2}|~{1,2})!?)",
+            "captures": {
+                "1": { "name": "storage.type.function.LiveScript" }
+            },
+            "comment": "Backcall."
+        },
+        {
+            "name": "dashed.variables.LiveScript",
+            "match": "\\w+(-\\w)+",
+            "comment": "Variables with dashes."
+        },
+        {
+            "name": "arguments.function.LiveScript",
+            "match": "&\\w+",
+            "captures": {
+                "0": { "name": "declaration.tag.LiveScript" }
+            },
+            "comment": "Shortcut for arguments."
         },
         {
             "include": "#numeric"
@@ -146,7 +167,7 @@
             "patterns": [
                 {
                     "name": "keyword.LiveScript",
-                    "match": "\\b(delete|do|import( all)?|in|instanceof|new|of|require|typeof(!)?|window|with)\\b",
+                    "match": "\\b(arguments|delete|do|import( all)?|in|instanceof|it|let|new|of|require|typeof(!)?|where|window|with)\\b",
                     "comment": "Keywords."
                 },
                 {
