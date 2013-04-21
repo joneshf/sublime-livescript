@@ -5,12 +5,20 @@
 This is greatly inspired by [@surjikal][surjikal]'s [Coffee Compile][coffee-compile]
 and [my own][joneshf] [Roy Complie][roy-compile]
 
+## Features
+
+* Syntax highlighting
+* Transpilation to js
+* Snippets
+
 ## Usage
 
 Compile the entire file by not selecting any text (or all the text).
 Compile a section by selecting just that section.
 Keyboard shortcut `Alt-Shift-L`
+
 Command Pallette integration `Live Script`
+
 Context menu `right click`
 
 ## Install
