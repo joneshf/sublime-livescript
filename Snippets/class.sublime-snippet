@@ -1,8 +1,8 @@
 <snippet>
     <content><![CDATA[
-else if ${1:condition}
+class ${1:ClassName}
   ${0:...}
 ]]></content>
-    <tabTrigger>elif</tabTrigger>
+    <tabTrigger>class</tabTrigger>
     <scope>source.LiveScript</scope>
 </snippet>

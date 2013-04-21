@@ -1,8 +1,8 @@
 <snippet>
     <content><![CDATA[
-else if ${1:condition}
+!function ${1:name}${2: ${3:args}}
   ${0:...}
 ]]></content>
-    <tabTrigger>elif</tabTrigger>
+    <tabTrigger>proc named</tabTrigger>
     <scope>source.LiveScript</scope>
 </snippet>

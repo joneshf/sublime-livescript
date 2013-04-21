@@ -1,8 +1,10 @@
 <snippet>
     <content><![CDATA[
-else if ${1:condition}
-  ${0:...}
+try
+  ${1:...}
+finally
+  ${2:...}
 ]]></content>
-    <tabTrigger>elif</tabTrigger>
+    <tabTrigger>try finally</tabTrigger>
     <scope>source.LiveScript</scope>
 </snippet>
