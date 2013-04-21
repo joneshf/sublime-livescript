@@ -86,19 +86,24 @@
         },
         {
             "name": "function.LiveScript",
-            "match": "(\\(.*?\\))?\\s*(\\!?([-]{1,2}|[~]{1,2})>)",
+            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?(\\(.*?\\))?\\s*(\\!?([-]{1,2}|[~]{1,2})>)",
             "captures": {
-                "1": { "name": "variable.parameter.function.LiveScript"},
-                "2": { "name": "storage.type.function.LiveScript" }
+                "2": { "name": "entity.name.function.LiveScript"},
+                "3": { "name": "keyword.operator.LiveScript"},
+                "4": { "name": "variable.parameter.function.LiveScript"},
+                "5": { "name": "storage.type.function.LiveScript" }
             },
             "comment": "Normal functions."
         },
         {
             "name": "named.function.LiveScript",
-            "match": "(\\!?(function)\\s*(.*?)\\s(.*))",
+            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?(\\!?(function)\\s*(.*?)\\s(.*))",
             "captures": {
-                "2": { "name": "storage.type.function.LiveScript" },
-                "3": { "name": "entity.name.function.LiveScript"}
+                "2": { "name": "entity.name.function.LiveScript"},
+                "3": { "name": "keyword.operator.LiveScript"},
+                "4": { "name": "storage.type.function.LiveScript" },
+                "5": { "name": "entity.name.function.LiveScript"},
+                "6": { "name": "variable.parameter.function.LiveScript"}
             },
             "comment": "Named functons."
         },
@@ -247,8 +252,16 @@
         "operators": {
             "patterns": [
                 {
-                    "name": "rational.operators.LiveScript",
-                    "match": "(=|\\bis(nt| not)?\\b|!=|!?~=|[>|<]{1}[=|\\?]?)",
+                    "name": "assignment.operators.LiveScript",
+                    "match": "=(?!=)|:=|\\+=|-=|\\*=|/=|%=|%%=|<\\?=|>\\?=|\\*\\*=|\\^=|\\?=|\\|\\|=|&&=|&&\\+=|\\?\\*=|\\+\\+=",
+                    "captures": {
+                        "0": { "name": "keyword.operator.LiveScript" }
+                    },
+                    "comment": "Assignment operators."
+                },
+                {
+                    "name": "relational.operators.LiveScript",
+                    "match": "(={2}|\\bis(nt| not)?\\b|!=|!?~=|>=\\?|>=|>|<=\\?|<=|<)\\B",
                     "captures": {
                         "1": { "name": "keyword.operators.LiveScript" }
                     },
