@@ -132,6 +132,21 @@
             "comment": "Shortcut for arguments."
         },
         {
+            "name": "switch.statement.LiveScript",
+            "begin": "\\|",
+            "beginCaptures": {
+                "0": { "name": "keyword.control.LiveScript" }
+            },
+            "end": "=>",
+            "endCaptures": {
+                "0": { "name": "keyword.control.LiveScript" }
+            },
+            "patterns": [
+                { "include": "$self" }
+            ],
+            "comment": "Switch statement"
+        },
+        {
             "include": "#numeric"
         },
         {
@@ -167,7 +182,7 @@
             "patterns": [
                 {
                     "name": "keyword.LiveScript",
-                    "match": "\\b(arguments|delete|do|import( all)?|in|instanceof|it|let|new|of|require|typeof(!)?|where|window|with)\\b",
+                    "match": "\\b(arguments|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|window)\\b",
                     "comment": "Keywords."
                 },
                 {
@@ -180,7 +195,7 @@
                 },
                 {
                     "name": "range.LiveScript",
-                    "match": "\\b(by|til|to)\\b",
+                    "match": "\\b(by|from|til|to)\\b",
                     "captures": {
                         "1": { "name": "keyword.LiveScript" }
                     },
@@ -197,6 +212,10 @@
                 {
                     "name": "constant.language.LiveScript",
                     "match": "@[\\w$\\-_]*"
+                },
+                {
+                    "name": "keyword.control.LiveScript",
+                    "match": "\\b(break|case|default|do|else|ever|for|if|in|loop|of|otherwise|switch|that|then|unless|until|when|where|while|with)\\b"
                 }
             ]
         },

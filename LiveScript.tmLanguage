@@ -264,6 +264,39 @@
 			<string>arguments.function.LiveScript</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>\|</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Switch statement</string>
+			<key>end</key>
+			<string>=&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.LiveScript</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>switch.statement.LiveScript</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>include</key>
 			<string>#numeric</string>
 		</dict>
@@ -325,7 +358,7 @@
 					<key>comment</key>
 					<string>Keywords.</string>
 					<key>match</key>
-					<string>\b(arguments|delete|do|import( all)?|in|instanceof|it|let|new|of|require|typeof(!)?|where|window|with)\b</string>
+					<string>\b(arguments|delete|import( all)?|instanceof|it|let|new|require|typeof(!)?|window)\b</string>
 					<key>name</key>
 					<string>keyword.LiveScript</string>
 				</dict>
@@ -357,7 +390,7 @@
 					<key>comment</key>
 					<string>Range keywords.</string>
 					<key>match</key>
-					<string>\b(by|til|to)\b</string>
+					<string>\b(by|from|til|to)\b</string>
 					<key>name</key>
 					<string>range.LiveScript</string>
 				</dict>
@@ -378,6 +411,12 @@
 					<string>@[\w$\-_]*</string>
 					<key>name</key>
 					<string>constant.language.LiveScript</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(break|case|default|do|else|ever|for|if|in|loop|of|otherwise|switch|that|then|unless|until|when|where|while|with)\b</string>
+					<key>name</key>
+					<string>keyword.control.LiveScript</string>
 				</dict>
 			</array>
 		</dict>
