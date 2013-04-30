@@ -25,7 +25,9 @@ Context menu `right click`
 
 ### Package Control
 
-Coming soon.
+This package is currently in package control and can be installed under the name LiveScript.
+
+In the near future this may change.
 
 ### Manual
 
