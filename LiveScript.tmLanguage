@@ -569,7 +569,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\bit|fallthrough|otherwise|super|that|this\b</string>
+					<string>\b(it|fallthrough|otherwise|super|that|this)\b</string>
 					<key>name</key>
 					<string>variable.language.LiveScript</string>
 				</dict>
