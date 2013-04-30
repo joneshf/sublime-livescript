@@ -271,7 +271,7 @@
                 },
                 {
                     "name": "variable.language.LiveScript",
-                    "match": "\\bit|fallthrough|otherwise|super|that|this\\b"
+                    "match": "\\b(it|fallthrough|otherwise|super|that|this)\\b"
                 }
             ]
         },
