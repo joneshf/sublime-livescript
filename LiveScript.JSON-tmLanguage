@@ -85,8 +85,19 @@
             "comment": "Lists of words."
         },
         {
+            "name": "inline.function.LiveScript",
+            "match": "\\s*((\\!?\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "captures": {
+                "2": { "name": "storage.type.function.LiveScript" },
+                "3": { "name": "variable.parameter.function.LiveScript"},
+                "4": { "name": "storage.type.function.LiveScript" },
+                "5": { "name": "storage.type.function.LiveScript" }
+            },
+            "comment": "Normal functions."
+        },
+        {
             "name": "function.LiveScript",
-            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?((\\!?\\(?)(.*?)(\\)?))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?((\\!?\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
             "captures": {
                 "2": { "name": "entity.name.function.LiveScript"},
                 "3": { "name": "keyword.operator.LiveScript"},

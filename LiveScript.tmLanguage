@@ -171,6 +171,37 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
+					<string>storage.type.function.LiveScript</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.LiveScript</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.LiveScript</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.LiveScript</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Normal functions.</string>
+			<key>match</key>
+			<string>\s*((\!?\()(.*?)(\)))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
+			<key>name</key>
+			<string>inline.function.LiveScript</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
 					<string>entity.name.function.LiveScript</string>
 				</dict>
 				<key>3</key>
@@ -202,7 +233,7 @@
 			<key>comment</key>
 			<string>Normal functions.</string>
 			<key>match</key>
-			<string>\s*((.*?)\s*(=|:|:=){1}\s*)?((\!?\(?)(.*?)(\)?))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
+			<string>\s*((.*?)\s*(=|:|:=){1}\s*)?((\!?\()(.*?)(\)))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
 			<key>name</key>
 			<string>function.LiveScript</string>
 		</dict>
