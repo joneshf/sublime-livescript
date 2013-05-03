@@ -38,11 +38,10 @@ class LiveScript(sublime_plugin.TextCommand):
         return proc.communicate(text)
 
     def _path(self):
-        node = self.SETTINGS.get('node_path')
         lsc = self.SETTINGS.get('livescript_path')
         path = os.getenv('PATH')
 
-        return '{0}{1}'.format(path, os.pathsep.join(filter(None, (node, lsc))))
+        return os.pathsep.join(filter(None, (path, lsc)))
 
     def _text_selected(self):
         return any(not selected.empty() for selected in self.view.sel())
