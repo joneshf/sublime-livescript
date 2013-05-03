@@ -97,7 +97,7 @@
         },
         {
             "name": "function.LiveScript",
-            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?((\\!?\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "match": "\\s*(([.*^#]?)\\s*(=|:|:=){1}\\s*)?((\\!?\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
             "captures": {
                 "2": { "name": "entity.name.function.LiveScript"},
                 "3": { "name": "keyword.operator.LiveScript"},
@@ -110,7 +110,7 @@
         },
         {
             "name": "named.function.LiveScript",
-            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?(((\\!?~?|~?\\!?)function)\\s*(.*?)\\s(.*))",
+            "match": "\\s*(([.*^#]?)\\s*(=|:|:=){1}\\s*)?(((\\!?~?|~?\\!?)function)\\s*(.*?)\\s(.*))",
             "captures": {
                 "2": { "name": "entity.name.function.LiveScript"},
                 "3": { "name": "keyword.operator.LiveScript"},
