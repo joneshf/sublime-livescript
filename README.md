@@ -25,9 +25,13 @@ Context menu `right click`
 
 ### Package Control
 
-This package is currently in package control and can be installed under the name LiveScript.
+This is not the livescript package currently in package control.
 
-In the near future this may change.
+To install this package
+
+1. Add this repository using the command `Package Control: Add Repository`
+1. Paste this url into sublime: `https://github.com/joneshf/sublime-livescript`
+1. Install the package like normal (`Package Control: Install Package` -> `livescript`)
 
 ### Manual
 
