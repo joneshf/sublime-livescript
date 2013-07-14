@@ -266,7 +266,7 @@
                 },
                 {
                     "name": "keyword.control.LiveScript",
-                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|switch|then|try|unless|until|when|where|while|with)\\b"
+                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|try|unless|until|when|where|while|with)\\b"
                 },
                 {
                     "name": "variable.language.LiveScript",
@@ -295,7 +295,7 @@
             "patterns": [
                 {
                     "name": "assignment.operators.LiveScript",
-                    "match": "(?<!\\.)((\\?{1}|\\|{2}|&{2})?(=(?!=)|:=|\\+{1,2}=|-{1,2}=|\\*{1,2}=|/=|%{1,2}=|<\\?=|>\\?=|\\^=))",
+                    "match": "(?<![\\.?|&:\\+\\-\\*/%<>^])((\\?{1}|\\|{2}|&{2})?(=(?!=)|:=|\\+{1,2}=|-{1,2}=|\\*{1,2}=|/=|%{1,2}=|<\\?=|>\\?=|\\^=))",
                     "captures": {
                         "0": { "name": "keyword.operator.LiveScript" }
                     },
@@ -303,7 +303,7 @@
                 },
                 {
                     "name": "relational.operators.LiveScript",
-                    "match": "(?<!\\.)((={2}|\\bis(nt| not)?\\b|!=|!?~=|>=\\?|>=|>|<=\\?|<=|<)\\B)",
+                    "match": "(?<!\\.)((={2}|\\bis(nt| not)?\\b|!=|!?~=|>=\\?|>=|>|<=\\?|<=|<))",
                     "captures": {
                         "1": { "name": "keyword.operators.LiveScript" }
                     },
