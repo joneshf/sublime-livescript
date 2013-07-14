@@ -44,12 +44,11 @@
             "comment": "Single quoted string."
         },
         {
-            "name": "string.LiveScript",
-            "match": "(\\\\)(.*?)(\\s)",
+            "name": "backslash.string.LiveScript",
+            "match": "(\\\\)(.+?)(\\s|\\)|]|}|,|;|$)",
             "captures": {
                 "1": { "name": "punctuation.definition.string.begin.LiveScript" },
-                "2": { "name": "definition.string.quoted.single.LiveScript" },
-                "3": { "name": "punctuation.definition.string.end.LiveScript" }
+                "2": { "name": "string.quoted.other.LiveScript" }
             },
             "comment": "String without whitespace."
         },

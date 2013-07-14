@@ -98,20 +98,15 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>definition.string.quoted.single.LiveScript</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.LiveScript</string>
+					<string>string.quoted.other.LiveScript</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>String without whitespace.</string>
 			<key>match</key>
-			<string>(\\)(.*?)(\s)</string>
+			<string>(\\)(.+?)(\s|\)|]|}|,|;|$)</string>
 			<key>name</key>
-			<string>string.LiveScript</string>
+			<string>backslash.string.LiveScript</string>
 		</dict>
 		<dict>
 			<key>comment</key>
