@@ -45,10 +45,11 @@
         },
         {
             "name": "backslash.string.LiveScript",
-            "match": "(\\\\)(.+?)(\\s|\\)|]|}|,|;|$)",
+            "match": "((\\\\)(.+?))(\\s|\\)|]|}|,|;|$)",
             "captures": {
-                "1": { "name": "punctuation.definition.string.begin.LiveScript" },
-                "2": { "name": "string.quoted.other.LiveScript" }
+                "1": { "name": "string.LiveScript" },
+                "2": { "name": "punctuation.definition.string.begin.LiveScript" },
+                "3": { "name": "string.quoted.other.LiveScript" }
             },
             "comment": "String without whitespace."
         },

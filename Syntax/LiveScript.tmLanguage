@@ -93,9 +93,14 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.LiveScript</string>
+					<string>string.LiveScript</string>
 				</dict>
 				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.LiveScript</string>
+				</dict>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>string.quoted.other.LiveScript</string>
@@ -104,7 +109,7 @@
 			<key>comment</key>
 			<string>String without whitespace.</string>
 			<key>match</key>
-			<string>(\\)(.+?)(\s|\)|]|}|,|;|$)</string>
+			<string>((\\)(.+?))(\s|\)|]|}|,|;|$)</string>
 			<key>name</key>
 			<string>backslash.string.LiveScript</string>
 		</dict>
