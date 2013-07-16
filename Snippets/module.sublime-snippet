@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+module.exports = class
+]]></content>
+    <tabTrigger>module</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
