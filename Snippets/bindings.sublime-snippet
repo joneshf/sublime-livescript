@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+bindings:
+  '': \
+
+]]></content>
+    <tabTrigger>bindings</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
