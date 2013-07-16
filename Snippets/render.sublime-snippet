@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+render: ->
+  super ...
+
+]]></content>
+    <tabTrigger>render</tabTrigger>
+    <scope>source.LiveScript</scope>
+</snippet>
