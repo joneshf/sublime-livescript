@@ -93,25 +93,25 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.LiveScript</string>
+					<string>string.LiveScript</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>definition.string.quoted.single.LiveScript</string>
+					<string>punctuation.definition.string.begin.LiveScript</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.LiveScript</string>
+					<string>string.quoted.other.LiveScript</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>String without whitespace.</string>
 			<key>match</key>
-			<string>(\\)(.*?)(\s)</string>
+			<string>((\\)(.+?))(\s|\)|]|}|,|;|$)</string>
 			<key>name</key>
-			<string>string.LiveScript</string>
+			<string>backslash.string.LiveScript</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -331,10 +331,10 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>[\w|\s]\|(?!\|)[\w|\s]</string>
+			<string>[\w|\s]*(?&lt;!\|)(\|)(?!\|)[\w|\s]</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.control.LiveScript</string>
@@ -563,7 +563,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|of|switch|then|try|unless|until|when|where|while|with)\b</string>
+					<string>\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|try|unless|until|when|where|while|with)\b</string>
 					<key>name</key>
 					<string>keyword.control.LiveScript</string>
 				</dict>
@@ -621,7 +621,7 @@
 					<key>comment</key>
 					<string>Assignment operators.</string>
 					<key>match</key>
-					<string>(\?{1}|\|{2}|&amp;{2})?(=(?!=)|:=|\+{1,2}=|-{1,2}=|\*{1,2}=|/=|%{1,2}=|&lt;\?=|&gt;\?=|\^=)</string>
+					<string>(?&lt;![\.?|&amp;:\+\-\*/%&lt;&gt;^])((\?{1}|\|{2}|&amp;{2})?(=(?!=)|:=|\+{1,2}=|-{1,2}=|\*{1,2}=|/=|%{1,2}=|&lt;\?=|&gt;\?=|\^=))</string>
 					<key>name</key>
 					<string>assignment.operators.LiveScript</string>
 				</dict>
@@ -637,7 +637,7 @@
 					<key>comment</key>
 					<string>Relational operators.</string>
 					<key>match</key>
-					<string>(={2}|\bis(nt| not)?\b|!=|!?~=|&gt;=\?|&gt;=|&gt;|&lt;=\?|&lt;=|&lt;)\B</string>
+					<string>(?&lt;!\.)((={2}|\bis(nt| not)?\b|!=|!?~=|&gt;=\?|&gt;=|&gt;|&lt;=\?|&lt;=|&lt;))</string>
 					<key>name</key>
 					<string>relational.operators.LiveScript</string>
 				</dict>
@@ -653,7 +653,7 @@
 					<key>comment</key>
 					<string>Numeric operators.</string>
 					<key>match</key>
-					<string>(\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~)</string>
+					<string>(?&lt;!\.)((\+|-(?!-?&gt;)|\*|/|%|\^|\.&amp;\.|\.\|\.|\.\^\.|\.&gt;{2,3}\.|\.&lt;{2,3}\.|~))</string>
 					<key>name</key>
 					<string>numeric.operators.LiveScript</string>
 				</dict>
@@ -669,7 +669,7 @@
 					<key>comment</key>
 					<string>Boolean operators.</string>
 					<key>match</key>
-					<string>(\b(and|or|not|xor)\b)|(\B(\||\&amp;|\!)\B)</string>
+					<string>(?&lt;!\.)((\b(and|or|not|xor)\b)|(\B(\||\&amp;|\!)\B))</string>
 					<key>name</key>
 					<string>boolean.operators.LiveScript</string>
 				</dict>
@@ -685,7 +685,7 @@
 					<key>comment</key>
 					<string>Existence operators.</string>
 					<key>match</key>
-					<string>(\?|!\?)</string>
+					<string>(?&lt;!\.)((\?|!\?))</string>
 					<key>name</key>
 					<string>existence.operators.LiveScript</string>
 				</dict>

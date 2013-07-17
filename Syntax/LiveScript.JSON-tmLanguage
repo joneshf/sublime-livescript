@@ -44,12 +44,12 @@
             "comment": "Single quoted string."
         },
         {
-            "name": "string.LiveScript",
-            "match": "(\\\\)(.*?)(\\s)",
+            "name": "backslash.string.LiveScript",
+            "match": "((\\\\)(.+?))(\\s|\\)|]|}|,|;|$)",
             "captures": {
-                "1": { "name": "punctuation.definition.string.begin.LiveScript" },
-                "2": { "name": "definition.string.quoted.single.LiveScript" },
-                "3": { "name": "punctuation.definition.string.end.LiveScript" }
+                "1": { "name": "string.LiveScript" },
+                "2": { "name": "punctuation.definition.string.begin.LiveScript" },
+                "3": { "name": "string.quoted.other.LiveScript" }
             },
             "comment": "String without whitespace."
         },
@@ -151,9 +151,9 @@
         },
         {
             "name": "switch.statement.LiveScript",
-            "begin": "[\\w|\\s]\\|(?!\\|)[\\w|\\s]",
+            "begin": "[\\w|\\s]*(?<!\\|)(\\|)(?!\\|)[\\w|\\s]",
             "beginCaptures": {
-                "0": { "name": "keyword.control.LiveScript" }
+                "1": { "name": "keyword.control.LiveScript" }
             },
             "end": "\\B=>\\B",
             "endCaptures": {
@@ -267,7 +267,7 @@
                 },
                 {
                     "name": "keyword.control.LiveScript",
-                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|of|switch|then|try|unless|until|when|where|while|with)\\b"
+                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|try|unless|until|when|where|while|with)\\b"
                 },
                 {
                     "name": "variable.language.LiveScript",
@@ -296,7 +296,7 @@
             "patterns": [
                 {
                     "name": "assignment.operators.LiveScript",
-                    "match": "(\\?{1}|\\|{2}|&{2})?(=(?!=)|:=|\\+{1,2}=|-{1,2}=|\\*{1,2}=|/=|%{1,2}=|<\\?=|>\\?=|\\^=)",
+                    "match": "(?<![\\.?|&:\\+\\-\\*/%<>^])((\\?{1}|\\|{2}|&{2})?(=(?!=)|:=|\\+{1,2}=|-{1,2}=|\\*{1,2}=|/=|%{1,2}=|<\\?=|>\\?=|\\^=))",
                     "captures": {
                         "0": { "name": "keyword.operator.LiveScript" }
                     },
@@ -304,7 +304,7 @@
                 },
                 {
                     "name": "relational.operators.LiveScript",
-                    "match": "(={2}|\\bis(nt| not)?\\b|!=|!?~=|>=\\?|>=|>|<=\\?|<=|<)\\B",
+                    "match": "(?<!\\.)((={2}|\\bis(nt| not)?\\b|!=|!?~=|>=\\?|>=|>|<=\\?|<=|<))",
                     "captures": {
                         "1": { "name": "keyword.operators.LiveScript" }
                     },
@@ -312,7 +312,7 @@
                 },
                 {
                     "name": "numeric.operators.LiveScript",
-                    "match": "(\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~)",
+                    "match": "(?<!\\.)((\\+|-(?!-?>)|\\*|/|%|\\^|\\.&\\.|\\.\\|\\.|\\.\\^\\.|\\.>{2,3}\\.|\\.<{2,3}\\.|~))",
                     "captures": {
                         "1": { "name": "keyword.operators.LiveScript" }
                     },
@@ -320,7 +320,7 @@
                 },
                 {
                     "name": "boolean.operators.LiveScript",
-                    "match": "(\\b(and|or|not|xor)\\b)|(\\B(\\||\\&|\\!)\\B)",
+                    "match": "(?<!\\.)((\\b(and|or|not|xor)\\b)|(\\B(\\||\\&|\\!)\\B))",
                     "captures": {
                         "0": { "name": "keyword.operators.LiveScript" }
                     },
@@ -328,7 +328,7 @@
                 },
                 {
                     "name": "existence.operators.LiveScript",
-                    "match": "(\\?|!\\?)",
+                    "match": "(?<!\\.)((\\?|!\\?))",
                     "captures": {
                         "1": { "name": "keyword.operators.LiveScript" }
                     },
