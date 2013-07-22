@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-console.error ${1:...}
+console.error "${1:Error}", $1
 ]]></content>
 	<tabTrigger>error</tabTrigger>
 	<scope>source.LiveScript</scope>

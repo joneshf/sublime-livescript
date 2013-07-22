@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-console.trace ${1:...}
+console.trace!
 ]]></content>
 	<tabTrigger>trace</tabTrigger>
 	<scope>source.LiveScript</scope>
