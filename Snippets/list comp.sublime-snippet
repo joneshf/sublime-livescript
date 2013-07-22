@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 [${1:x} for ${1:x} in ${2:${1:x}s}]
 ]]></content>
-    <tabTrigger>listcomp</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>listcomp</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

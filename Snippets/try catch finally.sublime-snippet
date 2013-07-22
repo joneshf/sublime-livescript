@@ -1,12 +1,12 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 try
-  ${1:...}
+	${1:...}
 catch
-  ${2:...}
+	${2:...}
 finally
-  ${3:...}
+	${3:...}
 ]]></content>
-    <tabTrigger>try catch finally</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>try catch finally</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

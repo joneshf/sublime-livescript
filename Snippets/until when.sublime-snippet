@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 until ${1:condition}${2: when ${3:guard}}
-  ${0:...}
+	${0:...}
 ]]></content>
-    <tabTrigger>until when</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>until when</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

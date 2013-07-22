@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 [${1:x} for ${1:x}${2: from ${3:start}} til ${4:end}${5: by ${6:step}}${7: when ${8:condition}}]
 ]]></content>
-    <tabTrigger>listcomp til</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>listcomp til</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

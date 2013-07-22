@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 class ${1:ClassName}${2: extends ${3:BaseClass}}${4: implements ${5:Mixin}}
-  ${0:...}
+	${0:...}
 ]]></content>
-    <tabTrigger>class extends implements</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>class extends implements</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

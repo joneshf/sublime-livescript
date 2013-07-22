@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 console.trace ${1:...}
 ]]></content>
-    <tabTrigger>trace</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>trace</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

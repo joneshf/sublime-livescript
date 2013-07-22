@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 console.warn ${1:...}
 ]]></content>
-    <tabTrigger>warn</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>warn</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

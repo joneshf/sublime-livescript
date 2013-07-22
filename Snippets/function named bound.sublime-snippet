@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 ~function ${1:name}${2: ${3:args}}
-  ${0:...}
+	${0:...}
 ]]></content>
-    <tabTrigger>fun named bound</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>fun named bound</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

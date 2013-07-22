@@ -1,9 +1,9 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 switch ${1:control}
-  case ${2:...} then ${3:...}
-  default ${0:...}
+	case ${2:...} then ${3:...}
+	default ${0:...}
 ]]></content>
-    <tabTrigger>switch</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>switch</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

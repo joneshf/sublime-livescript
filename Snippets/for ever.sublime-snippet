@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 for ever ${1:condition}
-  ${2:...}
+	${2:...}
 ]]></content>
-    <tabTrigger>for ever</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>for ever</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

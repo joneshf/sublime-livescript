@@ -1,10 +1,10 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 try
-  ${1:...}
+	${1:...}
 finally
-  ${2:...}
+	${2:...}
 ]]></content>
-    <tabTrigger>try finally</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>try finally</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

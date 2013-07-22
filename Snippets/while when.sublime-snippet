@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 while ${1:condition}${2: when ${3:guard}}
-  ${0:...}
+	${0:...}
 ]]></content>
-    <tabTrigger>while when</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>while when</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>

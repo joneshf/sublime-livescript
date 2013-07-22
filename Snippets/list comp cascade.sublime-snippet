@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[
+	<content><![CDATA[
 [${1:..} for ${2:list}]
 ]]></content>
-    <tabTrigger>listcomp cascade</tabTrigger>
-    <scope>source.LiveScript</scope>
+	<tabTrigger>listcomp cascade</tabTrigger>
+	<scope>source.LiveScript</scope>
 </snippet>
