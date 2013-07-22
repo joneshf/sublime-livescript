@@ -1,9 +1,0 @@
-<snippet>
-    <content><![CDATA[
-initialize: ->
-  super ...
-  
-]]></content>
-    <tabTrigger>initialize</tabTrigger>
-    <scope>source.LiveScript</scope>
-</snippet>
