@@ -27,6 +27,9 @@
             "patterns": [
                 {
                     "include": "#interpolated"
+                },
+                {
+                    "include": "#escape"
                 }
             ],
             "comment": "Double quoted string."
@@ -41,6 +44,11 @@
             "endCaptures": {
                 "0": { "name": "punctuation.definition.string.end.LiveScript" }
             },
+            "patterns": [
+                {
+                    "include": "#escape"
+                }
+            ],
             "comment": "Single quoted string."
         },
         {
@@ -86,37 +94,40 @@
         },
         {
             "name": "inline.function.LiveScript",
-            "match": "\\s*((\\!?\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "match": "\\s*(\\!\\s*)?((\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
             "captures": {
-                "2": { "name": "storage.type.function.LiveScript" },
-                "3": { "name": "variable.parameter.function.LiveScript"},
-                "4": { "name": "storage.type.function.LiveScript" },
-                "5": { "name": "storage.type.function.LiveScript" }
+                "1": { "name": "storage.type.function.LiveScript" },
+                "3": { "name": "storage.type.function.LiveScript" },
+                "4": { "name": "variable.parameter.function.LiveScript"},
+                "5": { "name": "storage.type.function.LiveScript" },
+                "6": { "name": "storage.type.function.LiveScript" }
             },
             "comment": "Normal functions."
         },
         {
             "name": "function.LiveScript",
-            "match": "\\s*(([.*^#]?)\\s*(=|:|:=){1}\\s*)?((\\!?\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
+            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?(\\!\\s*)?((\\()(.*?)(\\)))?\\s*(([-]{1,2}|[~]{1,2})>)",
             "captures": {
                 "2": { "name": "entity.name.function.LiveScript"},
                 "3": { "name": "keyword.operator.LiveScript"},
-                "5": { "name": "storage.type.function.LiveScript" },
-                "6": { "name": "variable.parameter.function.LiveScript"},
-                "7": { "name": "storage.type.function.LiveScript" },
-                "8": { "name": "storage.type.function.LiveScript" }
+                "4": { "name": "storage.type.function.LiveScript" },
+                "6": { "name": "storage.type.function.LiveScript" },
+                "7": { "name": "variable.parameter.function.LiveScript"},
+                "8": { "name": "storage.type.function.LiveScript" },
+                "9": { "name": "storage.type.function.LiveScript" }
             },
             "comment": "Normal functions."
         },
         {
             "name": "named.function.LiveScript",
-            "match": "\\s*(([.*^#]?)\\s*(=|:|:=){1}\\s*)?(((\\!?~?|~?\\!?)function)\\s*(.*?)\\s(.*))",
+            "match": "\\s*((.*?)\\s*(=|:|:=){1}\\s*)?(((\\!?~?|~?\\!?)\\s*(function))\\s*(.*?)\\s*(.*))",
             "captures": {
                 "2": { "name": "entity.name.function.LiveScript"},
                 "3": { "name": "keyword.operator.LiveScript"},
-                "5": { "name": "storage.type.function.LiveScript" },
-                "7": { "name": "entity.name.function.LiveScript"},
-                "8": { "name": "variable.parameter.function.LiveScript"}
+                "6": { "name": "storage.type.function.LiveScript" },
+                "7": { "name": "storage.type.function.LiveScript" },
+                "8": { "name": "entity.name.function.LiveScript"},
+                "9": { "name": "variable.parameter.function.LiveScript"}
             },
             "comment": "Named functons."
         },
@@ -209,6 +220,14 @@
         }
     ],
     "repository": {
+        "escape": {
+            "patterns": [
+                {
+                    "name": "constant.character.escape",
+                    "match": "\\\\."
+                }
+            ]
+        },
         "interpolated": {
             "patterns": [
                 {
