@@ -3,7 +3,7 @@
 ## Inspiration
 
 This is greatly inspired by [@surjikal][surjikal]'s [Coffee Compile][coffee-compile]
-and [my own][joneshf] [Roy Complie][roy-compile]
+and [my own][joneshf] [Roy Compile][roy-compile]
 
 ## Features
 
@@ -17,7 +17,7 @@ Compile the entire file by not selecting any text (or all the text).
 Compile a section by selecting just that section.
 Keyboard shortcut `Alt-Shift-L`
 
-Command Pallette integration `Live Script`
+Command Palette integration `Live Script`
 
 Context menu `right click`
 
@@ -57,6 +57,13 @@ $ git clone https://github.com/joneshf/sublime-livescript
 $ cd "%APPDATA%\Sublime Text 2"
 $ git clone https://github.com/joneshf/sublime-livescript
 ```
+
+## Contributing
+
+Pretty much anything goes with a few exceptions.
+
+* Additions must be directly related to the LiveScript language.
+* Snippet files __MUST__ use tabs.  This is to ensure uniform snippet insertion.
 
 [surjikal]: https://github.com/surjikal
 [coffee-compile]: https://github.com/surjikal/sublime-coffee-compile
