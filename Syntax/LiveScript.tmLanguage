@@ -160,17 +160,33 @@
 		<dict>
 			<key>begin</key>
 			<string>&lt;\[</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>declaration.tag.LiveScript</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>Lists of words.</string>
 			<key>end</key>
 			<string>\]&gt;</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>declaration.tag.LiveScript</string>
+				</dict>
+			</dict>
 			<key>name</key>
-			<string>declaration.tag.LiveScript</string>
+			<string>string.array.LiveScript</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>.</string>
+					<string>\S</string>
 					<key>name</key>
 					<string>string.LiveScript</string>
 				</dict>
@@ -601,7 +617,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|try|unless|until|when|where|while|with)\b</string>
+					<string>\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|throw|try|unless|until|when|where|while|with)\b</string>
 					<key>name</key>
 					<string>keyword.control.LiveScript</string>
 				</dict>

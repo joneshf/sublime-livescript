@@ -81,13 +81,19 @@
             ]
         },
         {
-            "name": "declaration.tag.LiveScript",
+            "name": "string.array.LiveScript",
             "begin": "<\\[",
             "end": "\\]>",
+            "beginCaptures": {
+                "0": { "name": "declaration.tag.LiveScript" }
+            },
+            "endCaptures": {
+                "0": { "name": "declaration.tag.LiveScript" }
+            },
             "patterns": [
                 {
                     "name": "string.LiveScript",
-                    "match": "."
+                    "match": "\\S"
                 }
             ],
             "comment": "Lists of words."
@@ -286,7 +292,7 @@
                 },
                 {
                     "name": "keyword.control.LiveScript",
-                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|try|unless|until|when|where|while|with)\\b"
+                    "match": "\\b(break|case|catch|default|do|else|ever|finally|for|if|in|loop|match|of|return|switch|then|throw|try|unless|until|when|where|while|with)\\b"
                 },
                 {
                     "name": "variable.language.LiveScript",
