@@ -208,7 +208,7 @@
 			<key>comment</key>
 			<string>Normal functions.</string>
 			<key>match</key>
-			<string>\s*(\!\s*)?((\()(.*?)(\)))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
+			<string>\s*(\!\s*)?((\((?!.*\())(.*?)(\)))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
 			<key>name</key>
 			<string>inline.function.LiveScript</string>
 		</dict>
@@ -254,7 +254,7 @@
 			<key>comment</key>
 			<string>Normal functions.</string>
 			<key>match</key>
-			<string>\s*((.*?)\s*(=|:|:=){1}\s*)?(\!\s*)?((\()(.*?)(\)))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
+			<string>\s*(([^#]*?)\s*(=|:|:=){1}\s*)?(\!\s*)?((\((?!.*\())(.*?)(\)))?\s*(([-]{1,2}|[~]{1,2})&gt;)</string>
 			<key>name</key>
 			<string>function.LiveScript</string>
 		</dict>
@@ -295,7 +295,7 @@
 			<key>comment</key>
 			<string>Named functons.</string>
 			<key>match</key>
-			<string>\s*((.*?)\s*(=|:|:=){1}\s*)?(((\!?~?|~?\!?)\s*(function))\s*(.*?)\s*(.*))</string>
+			<string>\s*(([^#]*?)\s*(=|:|:=){1}\s*)?(((\!?~?|~?\!?)\s*(function))\s*(\S*)\s*(.*))</string>
 			<key>name</key>
 			<string>named.function.LiveScript</string>
 		</dict>
