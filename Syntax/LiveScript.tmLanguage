@@ -547,7 +547,7 @@
 					<key>comment</key>
 					<string>Interpolated simple LiveScript variables within strings.</string>
 					<key>match</key>
-					<string>\#(\w*)\b</string>
+					<string>\#(\w+(-\w*)*)\b</string>
 					<key>name</key>
 					<string>constant.character.escape</string>
 				</dict>
