@@ -19,7 +19,7 @@
                                 "caption": "Settings - Default",
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${file_path}/../LiveScript.sublime-settings"
+                                    "file": "${packages}/sublime-livescript/LiveScript.sublime-settings"
                                 }
                             },
                             {
@@ -34,7 +34,7 @@
                                 "caption": "Key Bindings - Default",
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${file_path}/../Default.sublime-keymap"
+                                    "file": "${packages}/sublime-livescript/Default.sublime-keymap"
                                 }
                             },
                             {
