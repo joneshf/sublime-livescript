@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-${2:...} if ${1:condition}
+${1:...} if ${2:condition}
 ]]></content>
 	<tabTrigger>if short</tabTrigger>
 	<scope>source.LiveScript</scope>
