@@ -54,7 +54,7 @@ $ git clone https://github.com/joneshf/sublime-livescript
 #### Windows (untested)
 
 ```
-$ cd "%APPDATA%\Sublime Text 2"
+$ cd "%APPDATA%\Sublime Text 2\Packages"
 $ git clone https://github.com/joneshf/sublime-livescript
 ```
 
